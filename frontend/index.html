@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog</title>
+  <style>
+    @font-face {
+      font-family: 'OpenSans' !important;
+      src: url('/static/opensans.woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    #app {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: OpenSans, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #fff;
+    }
+
+    a {
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #888;
+    }
+
+    body::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 0.5ch;
+    }
+
+    summary {
+      list-style: none;
+    }
+
+    textarea {
+      resize: none;
+      font-family: Opensans, sans-serif;
+      padding: 0.3rem;
+    }
+
+    @media (orientation: portrait),
+    (max-width: 1000px) {
+      html {
+        font-size: 0.9rem;
+      }
+    }
+
+    .error {
+    font-size: 0.8rem;
+    color: #d00;
+  }
+
+  .error:empty {
+    display: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  </style>
+  <link rel="icon" href="/static/favicon.ico" />
+  <script defer src="./src/main.ts" type="module"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>
