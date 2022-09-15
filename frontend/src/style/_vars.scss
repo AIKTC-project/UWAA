@@ -1,0 +1,33 @@
+$p_color: #3e234f;
+$l_focus_color: #405d77;
+$d_focus_color: #3f2638;
+$red: #e42525;
+$green: #41aa3e;
+$l_grey: #d6d6d6;
+$d_grey: #1e1e1e;
+$l_hover_color: #eee;
+$d_hover_color: transparentize($d_focus_color, 0.5);
+$border_radius: 0.5ch;
+
+%fill_width {
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
+%fill_height {
+  height: -webkit-fill-available;
+  height: -moz-available;
+}
+
+@mixin flex($display: flex, $align: _, $justify: _, $direction: _) {
+  display: $display;
+  @if $align != _ {
+    align-items: $align;
+  }
+  @if $justify != _ {
+    justify-content: $justify;
+  }
+  @if $direction != _ {
+    flex-direction: $direction;
+  }
+}

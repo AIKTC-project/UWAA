@@ -1,0 +1,133 @@
+@import './_vars';
+
+@mixin form {
+  .linform {
+    @include flex($direction: column);
+  }
+  .msg {
+    margin-bottom: 2rem;
+    height: 1.3rem;
+  }
+  .usr {
+    @include flex($align: center);
+    position: relative;
+    height: 3.8rem;
+  }
+
+  .wstat {
+    position: absolute;
+    padding-left: 0.2rem;
+    color: $red;
+    font-size: 0.65rem;
+    top: 82%;
+  }
+
+  .box {
+    padding: 0.6rem 0.6rem 0.6rem;
+    width: 100%;
+    background: transparent;
+    border-radius: $border_radius;
+    font-size: 0.9rem;
+    border: 1px solid $d_hover_color;
+    color: $p_color;
+    &:focus-within {
+      border: 0.15rem solid $l_focus_color;
+    }
+  }
+
+  .usrlbl {
+    position: absolute;
+    margin-left: 3%;
+    color: $d_hover_color;
+    transition: ease all 0.3s;
+    cursor: text;
+  }
+
+  .usr:focus-within {
+    & > .usrlbl {
+      padding: 0 2px;
+      color: $p_color;
+      background-color: #fff;
+      font-size: 0.75rem;
+      margin-bottom: 13%;
+      margin-left: 3%;
+    }
+  }
+
+  :global(.usrlbl_focused) {
+    padding: 0 2px;
+    background-color: #fff;
+    font-size: 0.75rem;
+    margin-bottom: 13%;
+    margin-left: 3%;
+  }
+
+  :global(.eye){
+    position: absolute;
+    left: 90%;
+    fill: #9ca4ac;
+    cursor: pointer;
+  }
+
+  .btn {
+    margin: 2.5rem 0 0;
+    border: none;
+    border-radius: $border_radius;
+    padding: 0.6rem;
+    background-color: $p_color;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    &:hover {
+      background-color: $d_focus_color;
+    }
+  }
+  .ibtn {
+    position: relative;
+    margin: 0;
+    margin-top: 1rem;
+    font-weight: normal;
+    background-color: #fff;
+    color: $p_color;
+    border: 0.15rem solid $p_color;
+    padding: 0.4rem;
+    padding-left: 2.2rem;
+    &:hover {
+      background-color: $l_grey;
+      cursor: pointer;
+    }
+    & > .img {
+      position: absolute;
+      height: 1.6rem;
+      width: 1.5rem;
+      background-color: $p_color;
+      top: 0;
+      left: 0;
+      margin-top: -1px;
+      margin-left: -1px;
+      padding: 0.2rem;
+      & > svg > * {
+        fill: #fff;
+      }
+    }
+  }
+  .misc {
+    @include flex($justify: center);
+    width: 100%;
+    margin: 1.05rem 0 0;
+    & > ul {
+      @include flex($align: center, $direction: column);
+      font-size: 0.8rem;
+      list-style: none;
+      color: $p_color;
+    }
+  }
+
+  :global(.disabled) {
+    opacity: 0.5;
+  }
+
+  :global(.fill) {
+    fill: $p_color;
+  }
+}
